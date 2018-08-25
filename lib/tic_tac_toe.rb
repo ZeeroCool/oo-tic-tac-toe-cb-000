@@ -2,9 +2,8 @@ class TicTacToe
 
   def initialize
     @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-
   end
-
+############ All possible wining combos ############
   WIN_COMBINATIONS = [
   [0,1,2], # Top row
   [3,4,5], # Middle row
@@ -15,15 +14,15 @@ class TicTacToe
   [0,4,8],  # Top Left diagonal
   [2,4,6]  # Top Right diagonal
   ]
-
+############ Display current board  ############
   def display_board
   puts " #{@board[0] } | #{@board[1] } | #{@board[2] } \n-----------\n #{@board[3] } | #{@board[4] } | #{@board[5] } \n-----------\n #{@board[6] } | #{@board[7] } | #{@board[8] } "
   end
-
+############ Convert user input to index ############
   def input_to_index(input)
    input.to_i - 1
   end
-
+############ Insert players token to board array position ############
   def move(index, char)
     @board[index] = char
   end
