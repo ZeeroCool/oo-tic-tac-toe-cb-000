@@ -55,7 +55,7 @@ class TicTacToe
         return "O"
       end
     end
-
+############ Gets user input and executes one turn############
     def turn
         char = current_player
         puts "Please enter 1-9:"
@@ -71,7 +71,7 @@ class TicTacToe
         display_board
     end
 
-    ########## WON? METHOD - Check if a winning combo exists ##########
+    ########## Check if a winning combo exists ##########
     def won?
       win = ""
       #get winning combos
