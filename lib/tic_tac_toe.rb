@@ -26,18 +26,18 @@ class TicTacToe
   def move(index, char)
     @board[index] = char
   end
-
+############ Check players chosen position is occupied ############
   def position_taken?(index)
   !(@board[index].nil? || @board[index] == " ")
   end
-
+############ Check players chosen position is a valid position on board ############
   def valid_move?(index)
     if position_taken?(index) == false && index.between?(0, 8)
       true
     else false
     end
   end
-
+############ keeps track of which players turn it is ############
   def turn_count
     counter = 0
     @board.each do |turn|
@@ -47,7 +47,7 @@ class TicTacToe
     end
     return counter
   end
-
+############ Identifes the curretn players turn ############
   def current_player
       if turn_count.even? == true
         return "X"
