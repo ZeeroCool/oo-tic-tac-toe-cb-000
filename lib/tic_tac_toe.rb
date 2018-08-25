@@ -72,7 +72,29 @@ class TicTacToe
         display_board
     end
 
-
+    ########## WON? METHOD - Check if a winning combo exists ##########
+    def won?(board)
+      win = ""
+      #get winning combos
+      WIN_COMBINATIONS.each do |win_combo|
+        win_index_1 = win_combo[0]
+        win_index_2 = win_combo[1]
+        win_index_3 = win_combo[2]
+        #get board values
+        position_1 = board[win_index_1]
+        position_2 = board[win_index_2]
+        position_3 = board[win_index_3]
+        #IS THERE A WIINER?
+        if (position_1 == "X" && position_2 == "X" && position_3 == "X") || (position_1 == "O" && position_2 == "O" && position_3 == "O")
+          return win_combo
+        else
+          win = false
+        end
+      end
+      if win == false
+        return win
+      end
+    end
 
 
 
