@@ -70,7 +70,6 @@ class TicTacToe
         move(index, char)
         display_board
     end
-
     ########## Check if a winning combo exists ##########
     def won?
       win = ""
@@ -94,9 +93,40 @@ class TicTacToe
         return win
       end
     end
-
-
-
+    ########## FULL? METHOD - Is the board full? ##########
+    def full?
+    full = ""
+    @board.each do |board_space|
+      if board_space == " "
+        return false
+      else
+        full = true
+      end
+    end
+    if full == true
+      return true
+    end
+    end
+    ########## DRAW? METHOD - Is it a draw? ##########
+    def draw?
+    if won? == false && full? == true
+      return true
+    else
+      return false
+    end
+    end
+    ########## OVER? METHOD - Is the game over? ##########
+    def over?
+    if draw? == true
+      return true
+    elsif won? != false
+      return true
+    elsif draw? == true
+      return true
+    else
+    return false
+    end
+    end
 
 
 
